@@ -3,7 +3,7 @@ from PySide6.QtCore import *
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtWebEngineWidgets import *
-import sys ,qdarktheme
+import sys ,qdarktheme, os
 #import threading
 
 class MainWindow(QMainWindow):
@@ -64,17 +64,14 @@ class MainWindow(QMainWindow):
 		self.count = 0
 		self.startthread()
 		print("loading a web page...")
-		while True:
-			self.count+=1
-			#print(self.count)
-			if self.count == 101:
+		for i in range(100):
+			print(i)
+			if i == 100:
 				self.progress.setValue(0)
-				break
-			self.progress.setValue(self.count)
+
 
 	def loadisfinished(self):
 		print("loaded sucsessfully")
-		#self.count = 0
 		self.stopthread()
 
 
