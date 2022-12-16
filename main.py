@@ -65,9 +65,7 @@ class MainWindow(QMainWindow):
 		self.startthread()
 		print("loading a web page...")
 		for i in range(100):
-			print(i)
-			if i == 100:
-				self.progress.setValue(0)
+			self.progress.setValue(i)
 
 
 	def loadisfinished(self):
